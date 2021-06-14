@@ -10,7 +10,7 @@ import RickAndMortyLogo from "./components/RickAndMortyLogo";
 function CharactersPage({ className: c }) {
   const filterSelector = [
     {
-      name: "Status",
+      name: "status",
       options: [
         {
           label: "Alive",
@@ -27,7 +27,7 @@ function CharactersPage({ className: c }) {
       ],
     },
     {
-      name: "Gender",
+      name: "gender",
       options: [
         {
           label: "Male",

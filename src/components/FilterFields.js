@@ -5,12 +5,19 @@ import { changeValue } from "../pages/characters/filterSlice";
 import { sizer } from "../utility/Utils";
 
 function SelectField({ name, options, value, onChange }) {
+  const StyledSelect = styled(Select)`
+    .react-select__placeholder {
+      text-transform: capitalize;
+    }
+  `;
+
   return (
-    <Select
+    <StyledSelect
       value={value}
       placeholder={name}
       options={options}
       onChange={onChange}
+      classNamePrefix="react-select"
     />
   );
 }
