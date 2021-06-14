@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router";
-import { CharactersPage, LocationsPage, EpisodesPage } from "../pages";
+import { CharactersPage, LocationsPage, EpisodesPage } from "../views";
 
 function Router() {
   return (

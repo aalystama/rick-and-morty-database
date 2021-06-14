@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 import FilterFields from "../../components/FilterFields";
 import Modal from "../../components/Modal";
 import SearchField from "../../components/SearchField";
-import { sizer } from "../../utility/Utils";
+import { sizer } from "../../../utility/Utils";
 import RickAndMortyLogo from "./components/RickAndMortyLogo";
 
 function CharactersPage({ className: c }) {

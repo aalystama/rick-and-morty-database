@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import styled, { css } from "styled-components";
-import { changeValue } from "../pages/characters/filterSlice";
-import { sizer } from "../utility/Utils";
+import { changeValue } from "../../redux/slices/filterSlice";
+import { sizer } from "../../utility/Utils";
 
 function SelectField({ name, options, value, onChange }) {
   const StyledSelect = styled(Select)`

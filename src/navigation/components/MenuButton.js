@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import IconButton from "../../components/IconButton";
 import { sizer } from "../../utility/Utils";
+import IconButton from "../../views/components/IconButton";
 
 function MenuButton({ className: c, toggleMenu }) {
   return (

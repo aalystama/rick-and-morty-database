@@ -2,7 +2,7 @@ import NavBar from "./navigation";
 import { GlobalStyle } from "./utility/Utils";
 import Router from "./router/Router";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "./redux/store";
 
 function App() {
   return (
