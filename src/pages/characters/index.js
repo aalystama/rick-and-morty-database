@@ -6,15 +6,8 @@ import Modal from "../../components/Modal";
 import SearchField from "../../components/SearchField";
 import { sizer } from "../../utility/Utils";
 import RickAndMortyLogo from "./components/RickAndMortyLogo";
-import { FilterProvider } from "./FilterContext";
 
 function CharactersPage({ className: c }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const onOpenModal = () => setIsModalOpen(true);
-
-  const onCloseModal = () => setIsModalOpen(false);
-
   const filterSelector = [
     {
       name: "Status",
@@ -56,6 +49,12 @@ function CharactersPage({ className: c }) {
     },
   ];
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const onOpenModal = () => setIsModalOpen(true);
+
+  const onCloseModal = () => setIsModalOpen(false);
+
   return (
     <div className={c}>
       <RickAndMortyLogo />
@@ -63,11 +62,9 @@ function CharactersPage({ className: c }) {
       <Button onClick={onOpenModal}>
         <span>Advanced filters</span>
       </Button>
-      <FilterProvider>
-        <Modal title="Filters" isOpen={isModalOpen} onClose={onCloseModal}>
-          <FilterFields selectors={filterSelector} />
-        </Modal>
-      </FilterProvider>
+      <Modal title="Filters" isOpen={isModalOpen} onClose={onCloseModal}>
+        <FilterFields selectors={filterSelector} />
+      </Modal>
     </div>
   );
 }

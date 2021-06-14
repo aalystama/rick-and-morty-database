@@ -1,32 +1,39 @@
+import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import styled, { css } from "styled-components";
-import {
-  useFilterDispatch,
-  useFilterState,
-} from "../pages/characters/FilterContext";
+import { changeValue } from "../pages/characters/filterSlice";
 import { sizer } from "../utility/Utils";
 
-function SelectField({ name, options }) {
-  const StateContext = useFilterState();
-  const DispatchContext = useFilterDispatch();
-
+function SelectField({ name, options, value, onChange }) {
   return (
     <Select
-      defaultValue={StateContext}
-      value={StateContext}
+      value={value}
       placeholder={name}
       options={options}
-      onChange={(option) => DispatchContext(option)}
+      onChange={onChange}
     />
   );
 }
 
 function FilterFields({ className: c, selectors }) {
+  const filter = useSelector((state) => state.filter);
+  const dispatch = useDispatch();
+
+  function changeFilterValue(option, name) {
+    dispatch(changeValue({ name: name, value: option }));
+  }
+
   return (
     <ul className={c}>
       {selectors.map((v, i) => (
         <li key={i}>
-          <SelectField key={i} name={v.name} options={v.options} />
+          <SelectField
+            key={i}
+            name={v.name}
+            options={v.options}
+            value={filter[v.name]}
+            onChange={(option) => changeFilterValue(option, v.name)}
+          />
         </li>
       ))}
     </ul>
