@@ -18,7 +18,4 @@ export default styled(Button)`
   border-radius: 4px;
   border: none;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
-  &:hover {
-    background: rgba(217, 232, 243, 1);
-  }
 `;
